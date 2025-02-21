@@ -6,7 +6,6 @@ on:
       - main
 
 jobs:
-jobs:
   build-and-develop:
     runs-on: ubuntu-latest
     steps:
