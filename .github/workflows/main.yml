@@ -33,5 +33,5 @@ jobs:
           personal_token: ${{ secrets.ACCESS_TOKEN }}
           external_repository: Q-wjh213/Q-wjh213.github.io
           publish_dir: ./book
-          target_branch: main  # 推送到目标仓库的 main 分支
+          publish_branch: main  # 推送到目标仓库的 main 分支
           commit_message: "Deploy: ${{ github.event.head_commit.message }}"
