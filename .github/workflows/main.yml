@@ -33,4 +33,4 @@ jobs:
           external_repository: Q-wjh213/Q-wjh213.github.io
           publish_dir: ./book
           publish_branch: main  # 推送到目标仓库的 main 分支
-          commit_message: "Deploy: $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
+          commit_message: "meow~"
