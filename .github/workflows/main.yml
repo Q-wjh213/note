@@ -19,7 +19,7 @@ jobs:
           tar -zxvf shiroa-x86_64-unknown-linux-gnu.tar.gz
           cp shiroa-x86_64-unknown-linux-gnu/shiroa shiroa
       - name: build
-          ./shiroa build -d ./book
+        run: ./shiroa build -d ./book
       - name: deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
