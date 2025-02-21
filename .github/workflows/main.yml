@@ -1,0 +1,20 @@
+name: build and develop
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-develop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: install-and-unpack
+        run: |
+          wget "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-unknown-linux-gnu.tar.gz"
+          tar -zxvf shiroa-x86_64-unknown-linux-gnu.tar.gz
+          cp shiroa-x86_64-unknown-linux-gnu/shiroa shiroa
