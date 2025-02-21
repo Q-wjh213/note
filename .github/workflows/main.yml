@@ -20,10 +20,18 @@ jobs:
           cp shiroa-x86_64-unknown-linux-gnu/shiroa shiroa
       - name: build
         run: ./shiroa build -d ./book
+      # - name: deploy
+      #   uses: JamesIves/github-pages-deploy-action@releases/v3
+      #   with:
+      #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      #     REPOSITORY_NAME: Q-wjh213/Q-wjh213.github.io
+      #     BRANCH: main
+      #     FOLDER: book
       - name: deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          REPOSITORY_NAME: Q-wjh213/Q-wjh213.github.io
-          BRANCH: main
-          FOLDER: book
+          personal_token: ${{ secrets.ACCESS_TOKEN }}
+          external_repository: Q-wjh213/Q-wjh213.github.io
+          publish_dir: ./book
+          target_branch: main  # 推送到目标仓库的 main 分支
+          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
