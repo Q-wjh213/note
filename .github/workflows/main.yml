@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 1
       - name: install-and-unpack
         run: |
-          curl "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-pc-windows-msvc.zip"
+          powershell -Command "Invoke-WebRequest -Uri 'https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-pc-windows-msvc.zip' -OutFile 'shiroa-x86_64-pc-windows-msvc.zip'
           tar -zxvf shiroa-x86_64-pc-windows-msvc.zip
           copy shiroa-x86_64-pc-windows-msvc/shiroa.exe shiroa.exe
       - name: build
