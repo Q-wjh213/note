@@ -6,8 +6,9 @@ on:
       - main
 
 jobs:
+jobs:
   build-and-develop:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -15,19 +16,13 @@ jobs:
           fetch-depth: 1
       - name: install-and-unpack
         run: |
-          Invoke-WebRequest -Uri "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-pc-windows-msvc.zip" -OutFile "shiroa-x86_64-pc-windows-msvc.zip"
-          tar -zxvf shiroa-x86_64-pc-windows-msvc.zip
+          wget "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-unknown-linux-gnu.tar.gz"
+          tar -zxvf shiroa-x86_64-unknown-linux-gnu.tar.gz
+          cp shiroa-x86_64-unknown-linux-gnu/shiroa shiroa
       - name: Install CNS11643 fonts
-        uses: RisingInIris2017/cjk-fonts-action@v1  
+        uses: RisingInIris2017/cjk-fonts-action@v1 
       - name: build
-        run: ./shiroa.exe build -d ./book
-      # - name: deploy
-      #   uses: JamesIves/github-pages-deploy-action@releases/v3
-      #   with:
-      #     ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      #     REPOSITORY_NAME: Q-wjh213/Q-wjh213.github.io
-      #     BRANCH: main
-      #     FOLDER: book
+        run: ./shiroa build -d ./book
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
