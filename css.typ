@@ -1,3 +1,7 @@
+#show math.equation: it => {
+  show regex("\p{script=Han}"): set text(font: "Microsoft YaHei")
+  it
+}
 #let quote(body) = {
   // 设置块级元素间距
   set block(spacing: 0.5em)

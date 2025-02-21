@@ -170,7 +170,10 @@
     
   // }
 
-
+  show math.equation: it => {
+    show regex("\p{script=Han}"): set text(font: "KaiTi")
+    it
+  }
   show raw: it => {
     set text(font: ("DejaVu Sans Mono","FangSong"),size: 1.05em)
     if "block" in it.fields() and it.block {
