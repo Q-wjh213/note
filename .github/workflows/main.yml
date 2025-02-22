@@ -23,7 +23,7 @@ jobs:
       - name: install fonts
         run: |
           tar -zxvf Fonts.zip
-          copy .\Fonts\* ~\AppData\Local\Microsoft\Windows\Fonts /Y
+          copy .\Fonts\* ~\AppData\Local\Microsoft\Windows\Fonts -Force
       - name: build
         run: ./shiroa.exe build -d ./book
       - name: deploy
