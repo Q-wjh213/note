@@ -24,7 +24,7 @@ jobs:
       - name: install fonts
         run: |
           unzip Fonts.zip
-          cp ./Fonts/* ~/.fonts -y
+          cp ./Fonts/* ~/.fonts -f
           fc-cache -fv
       - name: build
         run: ./shiroa build -d ./book
