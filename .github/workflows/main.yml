@@ -28,7 +28,9 @@ jobs:
           cp ./Fonts/* ~/.fonts -f
           fc-cache -fv
       - name: build
-        run: ./shiroa build -d ./book
+        run: |
+          ./shiroa build -d ./book
+          cp ./CNAME ./book
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
