@@ -175,7 +175,7 @@
     it
   }
   show raw: it => {
-    set text(font: ("DejaVu Sans Mono","FangSong"),size: 1.05em)
+    set text(font: ("Consolas","FangSong"),size: 1.1em)
     if "block" in it.fields() and it.block {
       block(  // 直接对自定义block设置分页属性
         breakable: true,        // 显式启用分页
