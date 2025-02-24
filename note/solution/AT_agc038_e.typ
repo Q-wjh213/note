@@ -1,9 +1,8 @@
 #import "/book.typ": book-page
 #show: book-page.with()
+#import "/css.typ": *
 #set par(leading: 1.25em,spacing: 1.75em)
 #set text(font:"Microsoft YaHei",lang:"zh")
-#import "/css.typ": *
-
 
 
 = AT_agc038_e 题解
