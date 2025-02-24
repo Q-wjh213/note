@@ -24,6 +24,7 @@ jobs:
       - name: install fonts
         run: |
           unzip Fonts.zip
+          mkdir ~/.fonts
           cp ./Fonts/* ~/.fonts -f
           fc-cache -fv
       - name: build
