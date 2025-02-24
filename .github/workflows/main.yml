@@ -7,25 +7,27 @@ on:
 
 jobs:
   build-and-develop:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: install-and-unpack shiroa
+      - name: install-and-unpack
         run: |
-          Invoke-WebRequest -Uri "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-pc-windows-msvc.zip" -OutFile "shiroa-x86_64-pc-windows-msvc.zip"
-          tar -zxvf shiroa-x86_64-pc-windows-msvc.zip
+          wget "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-unknown-linux-gnu.tar.gz"
+          tar -zxvf shiroa-x86_64-unknown-linux-gnu.tar.gz
+          cp shiroa-x86_64-unknown-linux-gnu/shiroa shiroa
       - name: download fonts
         run: |
-          Invoke-WebRequest -Uri "https://github.com/Q-wjh213/note/releases/download/fonts/Fonts.zip" -OutFile "Fonts.zip"
+          wget "https://github.com/Q-wjh213/note/releases/download/fonts/Fonts.zip"
       - name: install fonts
         run: |
-          tar -zxvf Fonts.zip
-          copy .\Fonts\* C:\Windows\Fonts -Force
+          unzip Fonts.zip
+          cp ./Fonts/* ~/.fonts -y
+          fc-cache -fv
       - name: build
-        run: ./shiroa.exe build -d ./book
+        run: ./shiroa build -d ./book
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
