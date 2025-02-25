@@ -20,7 +20,7 @@
   `Yes` 或 `No`，表示是否存在情况。
 
   == 数据范围
-  $1 <= n,m <= 10^5$，$1 <= u_i,v_i <= n$。
+  $1 <= n,m <= 5 times 10^5$，$1 <= u_i,v_i <= n$。
 ])
 
 不妨考虑我们如何才能保证边两两不交，发现环内环外在拓扑意义下等价。若只能在环内连边，显然只需要保证连边所对应的区间要么不相交，要么包含。在环外自然与环内类似。所以我们的问题便转化成了：*我们是否能把题目所给定的边分成两组，使得在对应组别内两两不交（这里的相交指的是部分相交，下文同理）*。
@@ -54,3 +54,96 @@
 最后并查集查询 $i$ 与 $i+m$ 是否在同一集合即可。
 
 cdq 分治外层复杂度 $O(log n)$，内层排序+`set`复杂度 $O(n log n)$，总复杂度 $O(n log^2 n)$。
+
+= 代码
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define pr pair<int,int>
+#define fi first
+#define se second
+int const MAX=5e5+10;
+int fa[2*MAX];
+int find(int ind){
+	return fa[ind]==ind?ind:fa[ind]=find(fa[ind]);
+}
+void merge(int ind1,int ind2){
+	if(find(ind1)==find(ind2))return;
+	fa[find(ind1)]=find(ind2);
+	return;
+}
+int n,m;
+struct node{
+	int l,r,ind;
+}a[MAX*2];
+bool operator<(node t1,node t2){
+	return t1.l==t2.l?t1.r<t2.r:t1.l<t2.l;
+}
+vector<int> id;
+void cdq(int l,int r){
+	if(l==r)return;
+	if(l+1==r)return;
+	int mid=(l+r)/2;
+	cdq(l,mid);
+	cdq(mid,r);
+	int indl=id[l]+1;
+	int indmid=id[mid]+1;
+	sort(a+indl,a+indmid);
+	sort(a+indmid,a+id[r]+1);
+	vector<pr> V;
+	for(int i=indmid;i<=id[r];i++){
+		while(indl<=id[mid]&&a[indl].l<a[i].l){
+			V.push_back({a[indl].r,a[indl].ind});
+			indl++;
+		}
+		pr ls={0,0};
+		for(auto it:V){
+			if(it.fi>a[i].l){
+				merge(a[i].ind,it.se+m);
+				merge(a[i].ind+m,it.se);
+				ls=it;
+			}
+		}
+		V.clear();
+		if(ls.fi)V.push_back(ls);
+	}
+	return;
+}
+signed main(){
+	freopen("paint.in","r",stdin);
+	freopen("paint.out","w",stdout);
+	cin>>n>>m;
+	vector<pr> tp;
+	for(int i=1;i<=m;i++){
+		int u,v;
+		cin>>u>>v;
+		if(v<u)swap(u,v);
+		if(u==v)continue;
+		if(v==u+1||(u==1&&v==n))continue;
+		tp.push_back({u,v});
+	}
+	sort(tp.begin(),tp.end());
+	tp.erase(unique(tp.begin(),tp.end()),tp.end());
+	m=tp.size();
+	for(int i=1;i<=m;i++){
+		a[i]={tp[i-1].fi,tp[i-1].se,i};
+	}
+	for(int i=1;i<=2*m;i++)fa[i]=i;
+	sort(a+1,a+m+1,[](node t1,node t2){return t1.r<t2.r;});
+	id.push_back(0);
+	for(int i=1;i<=m;i++){
+		if(a[i].r!=a[i+1].r){
+			id.push_back(i);
+		}
+	}
+	cdq(0,id.size()-1);
+	for(int i=1;i<=m;i++){
+		if(find(i)==find(i+m)){
+			cout<<"No";
+			return 0;
+		}
+	}
+	cout<<"Yes";
+	return 0;
+}
+```
