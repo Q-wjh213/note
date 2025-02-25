@@ -221,7 +221,7 @@ signed main(){
 
 `rope` 的优点自然是好写好调，方便，可以极大缩短写代码的时间。缺点是其只能在部分场景中运用，而且其常数较大，若数据范围稍大则较难以通过。
 
-= *参考资料*
+= 参考资料
  + #link("https://oi-wiki.org/lang/pb-ds/")[OI-wiki `pb_ds` 相关资料]
 
  + #link("https://www.luogu.com.cn/article/zi85ltjk")[比STL还STL？——平板电视]

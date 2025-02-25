@@ -187,19 +187,20 @@
         [
           #set text(fill: code-extra-colors.fg) if code-extra-colors.fg != none
           #set par(justify: false)
+          #it
           // #place(right, text(luma(110), it.lang))
-          #let lines = it.text.split("\n")
-          #let cnt=0;
-          #for line in lines {
-            cnt+=1;
-            stack(dir: ltr,spacing: 0em)[
-              #box(width: 1.5em)[
-                #raw(str(cnt))
-              ]
-              #raw(line,lang: it.lang)
-            ]
+          // #let lines = it.text.split("\n")
+          // #let cnt=0;
+          // #for line in lines {
+          //   cnt+=1;
+          //   stack(dir: ltr,spacing: 0em)[
+          //     #box(width: 1.5em)[
+          //       #raw(str(cnt))
+          //     ]
+          //     #raw(line,lang: it.lang)
+          //   ]
             
-          }
+          // }
         ],
 
       )
