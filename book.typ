@@ -20,6 +20,8 @@
           - #chapter("note/solution/容斥原理/AT_agc038_e.typ")[AT_agc038_e]
       - #chapter(none)[cdq 分治]
           - #chapter("note/solution/cdq分治/画图.typ")[画图]
+      - #chapter(none)[动态规划]
+          - #chapter("note/动态规划/动态dp.typ")[动态dp]
   ]
 )
 
