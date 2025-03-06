@@ -38,7 +38,7 @@
 } else {
   10.5pt
 }
-#let heading-sizes = (26pt, 24pt, 18pt, 12pt, main-size)
+#let heading-sizes = (26pt, 24pt, 18pt, 16pt, main-size)
 #let list-indent = 0.5em
 
 /// The project function defines how your document looks.
