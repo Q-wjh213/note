@@ -2,8 +2,7 @@
 #show: book-page.with()
 #import "/css.typ": *
 #set par(leading: 1.25em,spacing: 1.75em)
-#set text(font:"Microsoft YaHei",lang:"zh")
-
+#set text(font:"Noto Sans CJK SC",lang:"zh")
 = 期望的线性性
 $ EE(a X + b Y)=a EE(X)+ b EE(Y) $
 

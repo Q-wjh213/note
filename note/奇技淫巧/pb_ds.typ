@@ -2,7 +2,7 @@
 #show: book-page.with()
 #import "/css.typ": *
 #set par(leading: 1.25em,spacing: 1.75em)
-#set text(font:"Microsoft YaHei",lang:"zh")
+#set text(font:"Noto Sans CJK SC",lang:"zh")
 #import "@preview/tablem:0.2.0": tablem, three-line-table
 
 = `pb_ds&rope`: C++ 中强大的扩展库
