@@ -2,7 +2,6 @@
 #show: book-page.with()
 #import "/css.typ": *
 #set par(leading: 1.25em,spacing: 1.75em)
-#set text(font:"Microsoft YaHei",lang:"zh")
 
 = 画图
 

@@ -2,7 +2,6 @@
 #show: book-page.with()
 #import "/css.typ": *
 #set par(leading: 1.25em,spacing: 1.75em)
-#set text(font:"Noto Sans CJK SC",lang:"zh")
 = 容斥原理
 
 $ |union.big_(i=1)^n S_i|=sum_(m=1)^n (-1)^(m-1) sum_(a_i<a_(i-1))|sect.big_(i=1)^m S_(a_i)| $
