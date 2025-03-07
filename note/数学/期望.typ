@@ -2,6 +2,10 @@
 #show: book-page.with()
 #import "/css.typ": *
 #set par(leading: 1.25em,spacing: 1.75em)
+#set text(font:"Source Han Sans CN VF")
+#import "@preview/cuti:0.2.1": show-cn-fakebold
+#show: show-cn-fakebold
+
 = 期望的线性性
 $ EE(a X + b Y)=a EE(X)+ b EE(Y) $
 
