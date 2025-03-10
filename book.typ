@@ -13,6 +13,7 @@
           - #chapter("note/数学/期望.typ")[期望]
       - #chapter(none)[奇技淫巧]
           - #chapter("note/奇技淫巧/pb_ds.typ")[pb_ds & rope]
+          - #chapter("note/奇技淫巧/wqs二分.typ")[wqs 二分]
       - #chapter(none)[离线]
           - #chapter("note/离线/整体二分.typ")[整体二分]
       - #chapter(none)[动态规划]
