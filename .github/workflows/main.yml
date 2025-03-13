@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 1
       - name: install-and-unpack
         run: |
-          wget "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.2.0/shiroa-x86_64-unknown-linux-gnu.tar.gz"
+          wget "https://github.com/Myriad-Dreamin/shiroa/releases/download/v0.3.0/shiroa-x86_64-unknown-linux-gnu.tar.gz"
           tar -zxvf shiroa-x86_64-unknown-linux-gnu.tar.gz
           cp shiroa-x86_64-unknown-linux-gnu/shiroa shiroa
       - name: download fonts

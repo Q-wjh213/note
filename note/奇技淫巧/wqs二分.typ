@@ -6,7 +6,7 @@
 #set text(font:"Source Han Sans CN VF")
 #import "@preview/cuti:0.2.1": show-cn-fakebold
 #show: show-cn-fakebold
-#import "@preview/cetz:0.2.2"
+#import "@preview/cetz:0.3.2"
 
 = wqs 二分
 
