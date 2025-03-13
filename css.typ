@@ -52,3 +52,5 @@
     ]
   )
 }
+
+#let breakline=box(place(dy: 1pt, dx: 0pt, line(length: 100%, stroke: .6pt+gray)))

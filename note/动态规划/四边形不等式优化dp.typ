@@ -104,12 +104,13 @@ $ w(x,y)+w(x+1,y+1)<=w(x,y+1)+w(x+1,y) $
 即证明
 
 $
-  |(sum_(i=x)^y a_i)+y-x-L|^P+|(sum_(i=x+1)^(y+1)) a_i+y-x-L|^P<=|(sum_(i=x)^(y+1) a_i)+(y+1)-x-L|^P+|(sum_(i=x+1)^(y) a_i)+y-(x+1)-L|^P
+  |(sum_(i=x)^y a_i)+y-x-L|^P+|(sum_(i=x+1)^(y+1)) a_i+y-x-L|^P<=\ |(sum_(i=x)^(y+1) a_i)+(y+1)-x-L|^P+|(sum_(i=x+1)^(y) a_i)+y-(x+1)-L|^P
 $
 
 我们设 $s=sum_(i=x)^y a_i$，则上式为
 
-$ |s+y-x-L|^P+|s+a_(y+1)-a_x+y-x-L|^P<=|s+a_(y+1)+(y+1)-x-L|^P+|s-a_x+y-(x+1)-L|^P $
+$ |s+y-x-L|^P+|s+a_(y+1)-a_x+y-x-L|^P<=\ 
+|s+a_(y+1)+(y+1)-x-L|^P+|s-a_x+y-(x+1)-L|^P $
 
 令 $S=s+y-x-L$，则又可化为
 
