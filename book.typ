@@ -8,6 +8,9 @@
   language: "zh-cn",
   summary: [
     - #chapter(none)[笔记]
+      - #chapter(none)[Tips]
+          //- #chapter("note/Tips/图论.typ")[图论]
+          - #chapter("note/Tips/组合计数.typ")[组合计数]
       - #chapter(none)[数学]
           - #chapter("note/数学/容斥原理.typ")[容斥原理]
           - #chapter("note/数学/期望.typ")[期望]

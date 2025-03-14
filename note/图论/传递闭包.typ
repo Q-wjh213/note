@@ -56,4 +56,4 @@ signed main(){
     return 0;
 }
 ```
-时间复杂度 $cal(O)(n^3/w)$
+时间复杂度 $cal(O)(n^3/w)$。
