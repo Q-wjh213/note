@@ -25,6 +25,7 @@
           - #chapter("note/动态规划/四边形不等式优化dp.typ")[四边形不等式优化dp]
       - #chapter(none)[图论]
           - #chapter("note/图论/传递闭包.typ")[传递闭包]
+          - #chapter("note/图论/prufer序列.typ")[Prufer 序列]
     - #chapter(none)[题解]
       - #chapter(none)[容斥原理]
           - #chapter("note/solution/容斥原理/AT_agc038_e.typ")[AT_agc038_e]
