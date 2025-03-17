@@ -1,3 +1,4 @@
+#import "@preview/cetz:0.3.2"
 #show math.equation: it => {
   show regex("\p{script=Han}"): set text(font: "Microsoft YaHei")
   it

@@ -14,6 +14,7 @@
       - #chapter(none)[数学]
           - #chapter("note/数学/容斥原理.typ")[容斥原理]
           - #chapter("note/数学/期望.typ")[期望]
+          - #chapter("note/数学/距离.typ")[期望]
       - #chapter(none)[奇技淫巧]
           - #chapter("note/奇技淫巧/pb_ds.typ")[pb_ds & rope]
           - #chapter("note/奇技淫巧/wqs二分.typ")[wqs 二分]
