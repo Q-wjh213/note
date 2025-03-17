@@ -55,3 +55,34 @@
 }
 
 #let breakline=box(place(dy: 1pt, dx: 0pt, line(length: 100%, stroke: .6pt+gray)))
+
+#let draw(e,x1,y1,x2,y2,points,lines)=cetz.canvas(length: e,{
+  import cetz.draw: *
+  grid((x1,y1), (int(x2)-.2, int(y2)-.2), step: 1, stroke: gray + 0.2pt)
+  line((x1,0), (x2, 0), mark: (end: "stealth"))
+  content((), $ x $, anchor: "west")
+  line((0, y1), (0, y2), mark: (end: "stealth"))
+  content((), $ y $, anchor: "south")
+  for x in range(x1,x2) {
+    if(x==0){
+      continue;
+    }
+    line((x, 3pt), (x, -3pt))
+    content((), anchor: "north", [$#x$]);
+  }
+  for y in range(y1,y2) {
+    if(y==0){
+      continue;
+    }
+    line((3pt,y), (-3pt,y))
+    content((), anchor: "east", [$#y$])
+  }
+
+
+  for i in points{
+    circle(i,radius:0.06,fill:black)
+  }
+  for i in lines{
+    line(i.at(0),i.at(1))
+  }
+})
