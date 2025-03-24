@@ -33,6 +33,8 @@
           - #chapter("note/solution/容斥原理/AT_agc038_e.typ")[AT_agc038_e]
       - #chapter(none)[cdq 分治]
           - #chapter("note/solution/cdq分治/画图.typ")[画图]
+      - #chapter(none)[贪心]
+          - #chapter("note/solution/贪心/shop.typ")[shop]
   ]
 )
 
