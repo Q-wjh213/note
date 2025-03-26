@@ -10,6 +10,8 @@
 = shop
 
 #quote[
+#link("https://vjudge.net/problem/HackerRank-the-imp#author=GPT_zh")[原题]
+
 == 题目描述
 小 A 来到了一个商店，商店内有 $n$ 件物品，每件物品有一个售价 $A_i$，小 A 是一个奸商，因此他能够把每件物品以 $B_i$ 的价格卖出。
 
