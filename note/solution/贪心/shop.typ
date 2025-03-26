@@ -9,6 +9,7 @@
 
 = shop
 
+
 #quote[
 #link("https://vjudge.net/problem/HackerRank-the-imp#author=GPT_zh")[原题]
 
