@@ -20,6 +20,7 @@
             - #chapter("note/奇技淫巧/wqs二分.typ")[wqs 二分]
         - #chapter(none)[数据结构]
             - #chapter("note/数据结构/odt.typ")[珂朵莉树]
+            - #chapter("note/数据结构/后缀数组.typ")[后缀数组]
         - #chapter(none)[离线]
             - #chapter("note/离线/整体二分.typ")[整体二分]
         - #chapter(none)[动态规划]
